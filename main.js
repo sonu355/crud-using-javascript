@@ -43,6 +43,11 @@ function deleteCheck(e){
     const no = item.classList[0]
     console.log(no)
     if(item.classList[0] === 'delete-btn'){
-        item.parentElement.remove()
+        const todo = item.parentElement
+        todo.remove()
+    }
+    if(item.classList[0] === 'complete-btn'){
+        const todo = item.parentElement
+        todo.classList.toggle("completed")
     }
 }
