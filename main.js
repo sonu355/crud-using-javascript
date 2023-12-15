@@ -1,6 +1,7 @@
 //selectors
 const todoButton = document.querySelector('.todo-button');
 const todoList = document.querySelector('.todo-list');
+const todoInput = document.querySelector('.todo-input');
 
 //event listeners
 todoButton.addEventListener('click', addTodo)
@@ -14,7 +15,7 @@ function addTodo(e){
 
     //crate new list
     const newTodo = document.createElement('li')
-    newTodo.innerText = 'hey'
+    newTodo.innerText = todoInput.value
     newTodo.classList.add('todo-item')
     todoDiv.appendChild(newTodo)
 
@@ -31,4 +32,6 @@ function addTodo(e){
     todoDiv.appendChild(deleteButton)
 
     todoList.appendChild(todoDiv)
+    
+    todoInput.value = ''
 }
